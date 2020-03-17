@@ -1,5 +1,7 @@
 package pojo;
 
+import java.util.Objects;
+
 public class Coin {
     private long id;
     private String imageUrl;
@@ -56,7 +58,7 @@ public class Coin {
         if (id != coin.id) return false;
         if (value != coin.value) return false;
         if (year != coin.year) return false;
-        if (imageUrl != null ? !imageUrl.equals(coin.imageUrl) : coin.imageUrl != null) return false;
+        if (!Objects.equals(imageUrl, coin.imageUrl)) return false;
         if (!country.equals(coin.country)) return false;
         return currency.equals(coin.currency);
     }

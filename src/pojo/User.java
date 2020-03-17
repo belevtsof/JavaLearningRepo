@@ -1,5 +1,7 @@
 package pojo;
 
+import java.util.Objects;
+
 public class User {
     private long id;
     private String imageUrl;
@@ -63,9 +65,9 @@ public class User {
         if (id != user.id) return false;
         if (followingCount != user.followingCount) return false;
         if (followersCount != user.followersCount) return false;
-        if (imageUrl != null ? !imageUrl.equals(user.imageUrl) : user.imageUrl != null) return false;
+        if (!Objects.equals(imageUrl, user.imageUrl)) return false;
         if (!name.equals(user.name)) return false;
-        if (description != null ? !description.equals(user.description) : user.description != null) return false;
+        if (!Objects.equals(description, user.description)) return false;
         return location.equals(user.location);
     }
 
