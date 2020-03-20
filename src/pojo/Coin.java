@@ -1,17 +1,18 @@
 package pojo;
 
+import java.net.URL;
 import java.util.Objects;
 
 public class Coin {
     private long id;
-    private String imageUrl;
+    private URL imageUrl;
     private String country;
     private int value;
     private short year;
     private String currency;
 
     public Coin (long id,
-                 String imageUrl,
+                 URL imageUrl,
                  String country,
                  int value,
                  short year,
@@ -28,7 +29,7 @@ public class Coin {
         return id;
     }
 
-    public String getImageUrl(){
+    public URL getImageUrl(){
         return imageUrl;
     }
 
