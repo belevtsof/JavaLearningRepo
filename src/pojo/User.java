@@ -1,16 +1,17 @@
 package pojo;
 
+import java.net.URL;
 import java.util.Objects;
 
 public class User {
     private long id;
-    private String imageUrl;
+    private URL imageUrl;
     private String name;
     private String description;
     private String location;
 
     public User (long id,
-                  String  imageUrl,
+                  URL  imageUrl,
                   String name,
                   String description,
                   String location){
@@ -25,7 +26,7 @@ public class User {
         return id;
     }
 
-    public String getImageUrl(){
+    public URL getImageUrl(){
         return imageUrl;
     }
 
