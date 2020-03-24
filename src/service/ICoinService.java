@@ -2,10 +2,15 @@ package service;
 
 import pojo.Coin;
 
+import java.util.ArrayList;
+
 public interface ICoinService {
 
-        Coin getCoinByCountry(final String country);
-        Coin getCoinByValue(final int value);
-        Coin getCoinByYear(final Short year);
-        Coin getCoinByCurrency(final String currency);
+        void addCoin(Coin coin);
+        void removeCoin(Coin coin);
+
+        void getCoinsByCountry(final String country);
+        ArrayList<Coin> getCoinsRepositoryByValue(final int value);
+        ArrayList<Coin> getCoinsByYear(final Short year);
+        ArrayList<Coin> getCoinsByCurrency(final String currency);
 }

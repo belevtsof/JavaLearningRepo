@@ -1,6 +1,7 @@
 package pojo;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.Objects;
 
 public class Coin {
@@ -8,14 +9,14 @@ public class Coin {
     private URL imageUrl;
     private String country;
     private int value;
-    private short year;
+    private Date year;
     private String currency;
 
     public Coin (long id,
                  URL imageUrl,
                  String country,
                  int value,
-                 short year,
+                 Date year,
                  String currency){
         this.id = id;
         this.imageUrl = imageUrl;
@@ -41,7 +42,7 @@ public class Coin {
         return value;
     }
 
-    public short getYear(){
+    public Date getYear(){
         return year;
     }
 
@@ -70,7 +71,7 @@ public class Coin {
         result = 31 * result + (imageUrl != null ? imageUrl.hashCode() : 0);
         result = 31 * result + country.hashCode();
         result = 31 * result + value;
-        result = 31 * result + (int) year;
+        result = 31 * result + Integer.getInteger(year.toString());
         result = 31 * result + currency.hashCode();
         return result;
     }
