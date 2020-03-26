@@ -8,15 +8,15 @@ public class Coin {
     private long id;
     private URL imageUrl;
     private String country;
-    private int value;
-    private Date year;
     private String currency;
+    private int value;
+    private short year;
 
     public Coin (long id,
                  URL imageUrl,
                  String country,
                  int value,
-                 Date year,
+                 short year,
                  String currency){
         this.id = id;
         this.imageUrl = imageUrl;

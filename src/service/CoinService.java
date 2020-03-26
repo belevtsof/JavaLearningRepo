@@ -1,45 +1,45 @@
 package service;
 
-import com.sun.jdi.connect.Connector;
 import pojo.Coin;
 
-import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CoinService implements ICoinService {
 
-    private ArrayList <Coin> CoinsRepository = new ArrayList<>();
+    private List <Coin> coinsRepository = new ArrayList<>();
 
     @Override
-    public void addCoin(Coin coin) {
-        if (coin == null)throw new InvalidParameterException(coin.toString());
-
-        CoinsRepository.add(coin);
+    public void addCoin(final Coin coin) {
+        if (coin == null) {
+            throw new InvalidParameterException("Given argument is null");
+        }
+        coinsRepository.add(coin);
     }
 
     @Override
-    public void removeCoin(Coin coin) {
+    public void removeCoin(final Coin coin) {
+        coinsRepository.remove(coin);
+    }
+
+    @Override
+    public void getCoinsByCountry(final String country) {
 
     }
 
     @Override
-    public void getCoinsByCountry(String country) {
-
-    }
-
-    @Override
-    public ArrayList<Coin> getCoinsRepositoryByValue(int value) {
+    public List<Coin> getCoinsByValue(int value) {
         return null;
     }
 
     @Override
-    public ArrayList<Coin> getCoinsByYear(Short year) {
+    public List<Coin> getCoinsByYear(Short year) {
         return null;
     }
 
     @Override
-    public ArrayList<Coin> getCoinsByCurrency(String currency) {
+    public List<Coin> getCoinsByCurrency(String currency) {
         return null;
     }
 }
